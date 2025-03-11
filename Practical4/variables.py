@@ -10,3 +10,7 @@ elif c<f:
     print("Bus is faster.")
 else: 
     print ("Both are equal.")
+X=True 
+Y=False
+W=X and Y
+print("The truth table for W look like:",W)
