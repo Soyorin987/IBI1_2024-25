@@ -10,7 +10,14 @@ elif c<f:
     print("Bus is faster.")
 else: 
     print ("Both are equal.")
+#Bus is faster.
 X=True 
 Y=False
 W=X and Y
-print("The truth table for W look like:",W)
+
+#truth table for W look like
+#X      Y      W
+#True  False False
+#False True  False
+#True  True  True
+#False False False
