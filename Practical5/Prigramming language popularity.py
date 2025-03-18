@@ -1,5 +1,6 @@
 my_dict={'JavaScript':62.3, 'HTML':52.9, 'Python':51, 'SQL':51, 'TypeScript':38.5}
 # Create a dictionary with the given data
+print(my_dict)
 
 import numpy as np
 import matplotlib.pyplot as plt
