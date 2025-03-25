@@ -45,3 +45,6 @@ plt.ylabel("Population")
 plt.title("SIR Model Simulation")
 plt.legend()
 plt.show()
+
+plt.figure(figsize=(6,4),dpi=150)
+plt.savefig("SIR",format="png")
