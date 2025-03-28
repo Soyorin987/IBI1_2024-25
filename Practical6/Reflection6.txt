@@ -1,0 +1,2 @@
+During this course, I have learnt how to randomly choose a plot in the population, how to use numpy to make more complicated figures and how to use arrays to track the change inside the data.
+I have also learnt how to communicate with other students.
