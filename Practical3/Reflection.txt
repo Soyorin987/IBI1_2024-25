@@ -1,0 +1,2 @@
+In this practical I learnt how to use github to save my code online.
+I also learnt how to use VScode to open a folder and edit a file.
