@@ -4,7 +4,9 @@ I like tea
 I like biscuits
 I like candies
 I like cola
-I like flowers
-I like books
-I like painting
-I like reading
+I don't like flowers
+I like Math
+I like English
+I like Chinese
+I like Biology
+I like Chemistry
