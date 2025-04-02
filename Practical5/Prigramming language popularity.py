@@ -1,3 +1,7 @@
+#Firstly, I will create a dictionary with the given data
+#Then, I will import the needed libraries and create a bar graph using the dictionary data
+#After that, I will ask the user to enter a programming language from the list and print the percentage of users who use that language
+#Finally, I will check if the user's choice is in the list and print the percentage of users who use that language or tell the user that it is not in the list
 my_dict={'JavaScript':62.3, 'HTML':52.9, 'Python':51, 'SQL':51, 'TypeScript':38.5}
 # Create a dictionary with the given data
 print(my_dict)
