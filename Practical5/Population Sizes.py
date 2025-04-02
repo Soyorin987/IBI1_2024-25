@@ -1,3 +1,5 @@
+#Firstly, create two lists using the given data
+#Then, import the needed libraries and create a pie chart using the list data
 uk_countries=[57.11,3.13,1.91,5.45]
 uk_name=['England','Wales','Northern Ireland','Scotland']
 Zhejiang_neighbouring_provinces_in_China=[65.77,41.88,45.28,61.27,85.15]
