@@ -1,3 +1,5 @@
+#Function: to find the largest intron in a given sequence
+#Firstly determine the splice donor and splice acceptor sites, then go through the sequence, keep comparing the sequence with the splice donor and splice acceptor sites, and finally find the largest intron.
 seq='ATGCAAGTGGTGTGTCTGTTCTGAGAGGGCCTAA'
 splice_donor='GT'
 splice_acceptor='AG'
