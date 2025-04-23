@@ -39,7 +39,7 @@ plt.show()
 
 #to answer the question, we need to find the DALYs and Entity data for first 5 countries 
 # Filter rows where DALYs > 650,000
-high_dalys = dalys_data.loc[dalys_data["DALYs"] > 650000, ["Entity", "DALYs"]]
+high_dalys = dalys_data.loc[dalys_data["DALYs"] > 650000, ["Entity", "DALYs","Year"]]
 # Print the result
 print("Countries with DALYs greater than 650,000 in a single year:")
 print(high_dalys)
