@@ -30,5 +30,16 @@ elif uk_mean < fr_mean:
     print("France has a higher mean of DALYs.")
 #plot the DALYs data for the United Kingdom
 plt.plot(uk.Year, uk.DALYs, 'b+')
+#make the plot easier to read
+plt.title("DALYs in the United Kingdom")
+plt.xlabel("Year")
+plt.ylabel("DALYs")
+plt.xticks(uk.Year,rotation=-90)
 plt.show()
 
+#to answer the question, we need to find the DALYs and Entity data for first 5 countries 
+# Filter rows where DALYs > 650,000
+high_dalys = dalys_data.loc[dalys_data["DALYs"] > 650000, ["Entity", "DALYs"]]
+# Print the result
+print("Countries with DALYs greater than 650,000 in a single year:")
+print(high_dalys)
