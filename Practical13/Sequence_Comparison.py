@@ -32,16 +32,18 @@ def compare(seq1, seq2, blosum62): #make a function to compare the two sequences
     score = 0
     identical = 0 #initialize the score and identical variables
     for a1, a2 in zip(seq1, seq2):
-        score += blosum62[a1][a2]
+        score += blosum62[a1][a2] #add the score for the two AAs
         if a1 == a2:
-            identical += 1
+            identical += 1 #add to the identical variable if the two AAs are the same
     identity = (identical / len(seq1)) * 100
     return score, identity
 
+#compare the three sequences
 score_hm, id_hm = compare(seq_human, seq_rat, blosum62)
 score_hr, id_hr = compare(seq_human, seq_random, blosum62)
 score_rr, id_rr = compare(seq_rat, seq_random, blosum62)
 
+#output the results
 print("Human vs Rat:    Score =", score_hm, " Identity =", f"{id_hm:.1f}%")
 print("Human vs Random: Score =", score_hr, " Identity =", f"{id_hr:.1f}%")
 print("Rat vs Random:   Score =", score_rr, " Identity =", f"{id_rr:.1f}%")
