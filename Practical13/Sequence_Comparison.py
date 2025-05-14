@@ -44,6 +44,6 @@ score_hr, id_hr = compare(seq_human, seq_random, blosum62)
 score_rr, id_rr = compare(seq_rat, seq_random, blosum62)
 
 #output the results
-print("Human vs Rat:    Score =", score_hm, " Identity =", f"{id_hm:.1f}%")
-print("Human vs Random: Score =", score_hr, " Identity =", f"{id_hr:.1f}%")
-print("Rat vs Random:   Score =", score_rr, " Identity =", f"{id_rr:.1f}%")
+print("Human(P04179) vs Rat(P09671):    Score =", score_hm, " Identity =", f"{id_hm:.1f}%")
+print("Human(P04179) vs Random: Score =", score_hr, " Identity =", f"{id_hr:.1f}%")
+print("Rat(P09671) vs Random:   Score =", score_rr, " Identity =", f"{id_rr:.1f}%")
