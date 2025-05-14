@@ -1,0 +1,11 @@
+The length of the human SOD2 protein:222
+The subcellular localisation of the human SOD2 protein:Mitochondrion matrix
+The range of percentage identities:58.1%-100%
+
+The alignment score and percentage of identical amino acids for each of the
+three comparisons:
+Human(P04179) vs Rat(P09671):    Score = 1097  Identity = 90.1%
+Human(P04179) vs Random: Score = -259  Identity = 3.6%
+Rat(P09671) vs Random:   Score = -274  Identity = 3.2%
+
+P04179 and P09671 are most closely related.
