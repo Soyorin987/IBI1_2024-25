@@ -4,9 +4,10 @@ import matplotlib.pyplot as plt
 population=np.zeros((100,100))
 
 #randomly choose one person in this 100*100 array to be the first infected person
-#store this person's position
-outbreak=np.random.choice(range(100),2)
-population[outbreak[0],outbreak[1]]=1
+outbreak = np.random.choice(10000, 1)#chooses one number from 0 to 9999, which is the index of the 100*100 array
+row = outbreak[0] // 100
+col = outbreak[0] % 100
+population[row, col] = 1#set this person's status to 1, which means infected
 
 #set beta and gamma
 beta=0.3
@@ -40,7 +41,6 @@ for time in range(times):
      plt.figure(figsize=(6, 4), dpi=150)
      plt.imshow(population, cmap='viridis', interpolation='nearest')
      plt.title(f"Time Step {time}")
-     plt.colorbar(label="State (0: Susceptible, 1: Infected, 2: Recovered)")
      plt.show()
      
 
