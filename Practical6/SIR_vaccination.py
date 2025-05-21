@@ -5,8 +5,8 @@ import matplotlib.pyplot as plt
 beta=0.3
 gramma=0.05
 #form the vaccination rates
-vaccination_rates= np.arange(0.1,1.1,0.1)
-#vaccination rates will range from 0.1 to 1.0 with a step of 0.1
+vaccination_rates= np.arange(0,1.1,0.1)
+#vaccination rates will range from 0 to 1.0 with a step of 0.1
 results={}
 for vaccination_rate in vaccination_rates:
     #set the basic variables
