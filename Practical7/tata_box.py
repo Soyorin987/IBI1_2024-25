@@ -32,5 +32,11 @@ with open(infile, "r") as fin, open(outfile, "w") as fout:
         if re.search(TATA_BOX_PATTERN, full_sequence):
             fout.write(f"{current_header}\n")
             fout.write(f"{full_sequence}\n")
-
+with open(outfile, "r") as f:
+    lines = f.readlines()
+if lines:
+    lines[-1] = lines[-1].rstrip("\n")  #remove the last newline character
+with open(outfile, "w") as f:#open the file in write mode
+    f.writelines(lines)#write the lines back to the file
+    
 print(f"Genes containing TATA box saved to '{outfile}'.")#output the result
