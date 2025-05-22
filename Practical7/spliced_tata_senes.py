@@ -21,8 +21,9 @@ with open(infile, "r") as fin, open(outfile, "w") as fout:
         if line.startswith(">"):  #find the header line
             if current_header and current_sequence:
                 full_sequence = ''.join(current_sequence) #join the sequence lines
+                tata_count = len(re.findall(TATA_BOX_PATTERN, full_sequence)) #count the number of TATA boxes in the sequence
                 if re.search(TATA_BOX_PATTERN, full_sequence) and re.search(rf'{donor}.+{acceptor}',full_sequence): #check if the TATA box and donor, acceptor combination are in the sequence
-                    fout.write(f"{current_header}\n")
+                    fout.write(f"{current_header}|{tata_count}\n")
                     fout.write(f"{full_sequence}\n")
             # update the current header
             gene_id = line.split(" ")[0][1:]  # delete the > sign'>'
@@ -36,7 +37,7 @@ with open(infile, "r") as fin, open(outfile, "w") as fout:
     if current_header and current_sequence:
         full_sequence = ''.join(current_sequence)
         if re.search(TATA_BOX_PATTERN, full_sequence) and splice_combination in full_sequence:
-            fout.write(f"{current_header}\n")
+            fout.write(f"{current_header}|{tata_count}\n")
             fout.write(f"{full_sequence}\n")
 
 
