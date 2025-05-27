@@ -23,13 +23,17 @@ for term in terms:
     is_a_list = term.getElementsByTagName("is_a") #extract the is_a elements
     is_a_count = len(is_a_list) #count the number of is_a elements
 
-if namespace in DOM_info and is_a_count > DOM_info[namespace]["count"]:
+    if namespace in DOM_info and is_a_count > DOM_info[namespace]["count"]:
         DOM_info[namespace]["id"] = term_id
         DOM_info[namespace]["count"] = is_a_count
 #check if the namespace is in the dictionary and if the count is greater than the current count,then update the dictionary
 
 end_time = time.time()#end the time
 time1= end_time - start_time#calculate the time taken for the process
+
+# Output the result from DOM parsing
+for ns, info in DOM_info.items():
+    print(f"{ns}: Count = {info['count']}, GO term ID = {info['id']};(DOM)")
 
 class GOHandler(xml.sax.ContentHandler):
     def __init__(self):
@@ -70,7 +74,6 @@ class GOHandler(xml.sax.ContentHandler):
                     self.max_info[self.current_namespace]["id"] = self.current_id# update the maximum count and corresponding ID
         self.current_data = ""  # reset current_data
 
-start_time2 = time.time()#start the time
 parser = xml.sax.make_parser()
 parser.setFeature(xml.sax.handler.feature_namespaces, 0)
 
@@ -78,13 +81,13 @@ handler = GOHandler()
 parser.setContentHandler(handler)
 parser.parse(infile)
 end_time2 = time.time()#end the time
-time2= end_time2 - start_time2
+time2= end_time2 - end_time#calculate the time taken for the SAX parsing
 
 timedifference = time1 - time2 #calculate the time difference between the two methods
 
 #output the result
 for ns, info in handler.max_info.items():
-    print(f"{ns}: Max is_a count = {info['count']}, GO term ID = {info['id']}")
+    print(f"{ns}: Count = {info['count']}, GO term ID = {info['id']};(SAX)")
 
 print("Using Dom costs", time1, "seconds","Using SAX costs", time2, "seconds","and the time difference is", timedifference, "seconds")#output the time taken for the process
 
