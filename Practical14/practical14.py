@@ -33,10 +33,12 @@ time1= end_time - start_time#calculate the time taken for the process
 
 class GOHandler(xml.sax.ContentHandler):
     def __init__(self):
+        # Initialize the variables
         self.current_data = ""
         self.current_id = ""
         self.current_namespace = ""
         self.is_a_count = 0
+        #create a dictionary to store the maximum counts and corresponding IDs for each namespace
         self.max_info = {
             "biological_process": {"id": "", "count": 0},
             "molecular_function": {"id": "", "count": 0},
@@ -44,7 +46,7 @@ class GOHandler(xml.sax.ContentHandler):
         }
 
     def startElement(self, tag, attributes):
-        self.current_data = tag
+        self.current_data = tag # set the current data to the tag name
         if tag == "term":
             # reset all values for a new <term>
             self.current_id = ""
@@ -52,6 +54,7 @@ class GOHandler(xml.sax.ContentHandler):
             self.is_a_count = 0
 
     def characters(self, content):
+        # Accumulate content based on the current data context
         if self.current_data == "id":
             self.current_id += content.strip()
         elif self.current_data == "namespace":
@@ -60,11 +63,11 @@ class GOHandler(xml.sax.ContentHandler):
             self.is_a_count += 1  # every time a <is_a> text appears, we count 1
 
     def endElement(self, tag):
-        if tag == "term":
+        if tag == "term":#whenever the end of a term is reached, we check the counts
             if self.current_namespace in self.max_info:
-                if self.is_a_count > self.max_info[self.current_namespace]["count"]:
+                if self.is_a_count > self.max_info[self.current_namespace]["count"]:#if the current is_a count is greater than the maximum count for the namespace
                     self.max_info[self.current_namespace]["count"] = self.is_a_count
-                    self.max_info[self.current_namespace]["id"] = self.current_id
+                    self.max_info[self.current_namespace]["id"] = self.current_id# update the maximum count and corresponding ID
         self.current_data = ""  # reset current_data
 
 start_time2 = time.time()#start the time
